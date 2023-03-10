@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UARTS</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+
+<style>
+    .card{
+        /*position:absolute;*/
+        /*left: 10%*/
+        padding-left: 5%;
+    }
+</style>
+<body>
+    <button onclick="function1(1)"> Click 1 </button>
+    <button onclick="function1(2)"> Click 2 </button>
+    <button onclick="function1(3)"> Click 3 </button>
+    <div id="container">
+        <img id="card1" class="card" src="gif/a.gif" alt="A" style="display: none">
+        <img id="card2" class="card" src="gif/b.gif" alt="B" style="display: none">
+        <img id="card3" class="card" src="gif/c.gif" alt="C" style="display: none">
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    const active_cards = [];
+
+    function function1(i){
+        const id = "card"+i;
+        const card_num = active_cards.push(id);
+        // alert(active_cards);
+        // for (let i = 0; i < card_num; i++) {
+        //     $("#"+active_cards[i]).style.left = (i*5).toString()+"%";
+        //     alert($("#"+active_cards[i]).style.left);
+        // }
+        // $("#"+id).animate({'opacity': 1},5000);
+        $("#"+id).fadeIn(2000);
+        $("#"+id).fadeOut(6000, function(){active_cards.pop()});
+
+    }
+</script>
+
+</html>
