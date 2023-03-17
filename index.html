@@ -15,6 +15,9 @@
         /*left: 10%*/
         padding-left: 5%;
     }
+    div{
+        text-align: center;
+    }
 </style>
 <body>
     <button onclick="function1(1)"> Click 1 </button>
@@ -35,13 +38,8 @@
         const id = "card"+i;
         const card_num = active_cards.push(id);
         // alert(active_cards);
-        // for (let i = 0; i < card_num; i++) {
-        //     $("#"+active_cards[i]).style.left = (i*5).toString()+"%";
-        //     alert($("#"+active_cards[i]).style.left);
-        // }
-        // $("#"+id).animate({'opacity': 1},5000);
         $("#"+id).fadeIn(2000);
-        $("#"+id).fadeOut(6000, function(){active_cards.pop()});
+        $("#"+id).fadeOut(8000, function(){active_cards.pop()});
 
     }
 </script>
